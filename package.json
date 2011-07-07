@@ -1,18 +1,18 @@
 {
-  "author": "James E. Marca <jmarca@translab.its.uci.edu>",
-  "name": "detector_information",
-  "description": "get information about detectors (VDS, WIM, etc)",
-  "version": "0.0.1",
-  "repository": {
-    "type": "git",
-    "url": "metis.its.uci.edu:detector_information"
-  },
-  "engines": {
-    "node": "v0.4.7"
-  },
-  "dependencies": {
-    "couchdb":">1.0.0"
-                  ,"underscore" : ""
-  },
-  "devDependencies": {}
+    "author": "James E. Marca <jmarca@translab.its.uci.edu>",
+    "name": "detector_information",
+    "description": "get information about detectors (VDS, WIM, etc)",
+    "version": "0.0.1",
+    "repository": {
+        "type": "git",
+        "url": "metis.its.uci.edu:detector_information"
+    },
+    "engines": {
+        "node": "v0.4.8"
+    },
+    "dependencies": {
+        "couchdb":"1.0.3"
+        ,"underscore" : ""
+    },
+    "devDependencies": {}
 }
