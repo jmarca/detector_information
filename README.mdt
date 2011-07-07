@@ -1,0 +1,53 @@
+The whole point of this effort is to replace the local file system
+operation of my R scripts and allow multiple computers to do the same
+thing, and to save the processing status in a CouchDB so that the
+documents hold state of processing.
+
+The documents hold state of processing.  Each vds id or wim site
+number has various states that are either on or off, and that more or
+less must be passed through in order.
+
+1. They have to be loaded with raw data, per year.
+    * The raw data has to be aggregated to hours.
+    * The raw data has to be self-imputed to fill missing holes.
+
+2. Each VDS site must be associated as a `neighbor` to at least one WIM
+   site and direction so as to enable truck imputations.
+
+3. Each unique WIM site and direction must be associated as a `pair`
+   with at least one VDS site per year to enable the creation of the
+   primary imputation set. The pairs must be drawn from the neighbors
+   list.
+
+4. Each VDS site for each year must be run through the truck
+   imputation program to estimate the numbers of trucks at the site.
+
+5. Each truck imputation output must be loaded into the database.
+
+
+In addition to these states, there are states that exist for
+geographic areas. Because these states depend upon the change in state
+for member detectors, they can and should also be tracked in this
+database.
+
+1. Each geographic area uses the imputed truck and vehicle data to
+produce aggregate estimates of volumes, speeds, etc.
+
+2. Each time the imputations in the database are changed or updated or
+added to, step 6 must be run again for each affected area.
+
+
+Each of these states should be gettable, and most should also be
+settable by external processes, so that the processing work can be
+split among multiple servers.  Some, for example setting whether an
+area needs to be recomputed, can be set by logical rules.  The ideal
+tool would be a changes listener.
+
+A flexible approach that moves logic out of the server would be to
+just save all states in a single doc per detector or whatever, and any
+external process gets the whole document.  This would mean the server
+knows nothing about the docs it is shipping around, other than where
+to find them.  That is good, as then the node server can be a low
+level shell for CouchDB, and I can also just directly access CouchDB
+from the R jobs if they are local to UCI.
+
