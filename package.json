@@ -17,5 +17,6 @@
   "devDependencies": {},
   "scripts": {
     "start": "node server.js"
-  }
+  },
+  "main": "lib/detector_information.js"
 }
