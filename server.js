@@ -55,6 +55,9 @@ function vdsdata(app) {
   app.get('/safety/:vdsid(\\d{6,7})/:startts/:endts?'
          ,detector_info.vds_safety_service({})
          );
+  app.get('/vdsdata/hourly/:vdsid(\\d{6,7})/:hour/:start/:end?'
+         ,detector_info.vds_hourly_service({})
+         );
 }
 
 
