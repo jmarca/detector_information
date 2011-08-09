@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "couchdb": "1.0.3",
-    "underscore": ""
+      "underscore": "",
+      "slide":""
   },
   "devDependencies": {},
   "scripts": {
