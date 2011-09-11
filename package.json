@@ -8,7 +8,7 @@
     "url": "metis.its.uci.edu:detector_information"
   },
   "engines": {
-    "node": "v0.4.8"
+    "node": "~v0.4.8"
   },
   "dependencies": {
     "couchdb": "1.0.3",
