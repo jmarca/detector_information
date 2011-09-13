@@ -14,8 +14,7 @@
     "couchdb": "1.0.3",
       "underscore": "",
       "slide":"",
-      "request":"",
-      "yajl":""
+      "request":""
   },
   "devDependencies": {},
   "scripts": {
