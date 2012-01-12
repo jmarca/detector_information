@@ -2,7 +2,7 @@
   "author": "James E. Marca <jmarca@translab.its.uci.edu>",
   "name": "detector_information",
   "description": "get information about detectors (VDS, WIM, etc)",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "repository": {
     "type": "git",
     "url": "metis.its.uci.edu:detector_information"
