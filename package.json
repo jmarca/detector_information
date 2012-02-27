@@ -11,10 +11,12 @@
     "node": ">v0.4.8"
   },
   "dependencies": {
-    "couchdb": "1.0.3",
-    "underscore": "",
-    "slide": "",
-    "request": ""
+      "couchdb": "1.0.3",
+      "underscore": "",
+      "slide": "",
+      "pg":"",
+      "async":""
+      "request": ""
   },
   "devDependencies": {},
   "scripts": {
